@@ -9,14 +9,28 @@
 </head>
 
 <body>
-    <header>
-    </header>
-
-    <main>
-    </main>
-
-    <footer>
-    </footer>
+    <div class="container">
+        <div class="encriptar">
+            <textarea class="texto" name="texto" id="texto" cols="30" rows="10"
+                placeholder="Por favor, ingresa el texto aquí: "></textarea>
+        </div>
+        <div class="terminos">
+            <p>Introducir solamente letras minúsculas y sin acentos.</p>
+        </div>
+        <div class="botones">
+            <button class="btn-encriptar" type="button" onclick="encriptar()">Encriptar texto</button>
+            <input class="btn-desencriptar" type="button" value="Desencriptar" onclick="desencriptar()">
+        </div>
+    </div>
+    <div class="encriptado">
+        <img src="" alt="" id="muneco">
+        <div class="mensaje-encriptado" id="mensaje-encriptado">
+            <h2 id="titulo-mensaje">Ningún mensaje encontrado</h2>
+            <p>Ingresa el texto que deseas encriptar o desencriptar</p>
+            <textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje"></textarea>
+        </div>
+    </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
