@@ -7,29 +7,3 @@
     font-family: "Inter", sans-serif;
 }
 
-html {
-    background-color: #F3F5FC;
-}
-
-.header {
-    width: 100%;
-    height: 150px;
-}
-
-.logo-alura {
-    width: 120px;
-    height: 48px;
-    margin: 40px;
-}
-
-.text-history {
-    background-color: #FFFFFF;
-    border-radius: 32px;
-    width: 400px;
-    height: 944px;
-    padding: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: ;
-}
