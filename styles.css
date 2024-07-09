@@ -1,6 +1,11 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Añado esto para manejar mejor el padding y margin */
+}
+
+body {
+  font-family: "Inter", sans-serif; /* Defino la fuente de forma global */
 }
 
 .container {
@@ -17,12 +22,11 @@
   left: 12%;
   top: 15%;
   border: none;
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 400;
   font-size: 32px;
-  line-height: 150%;
+  line-height: 1.5; /* Usar valor numérico para compatibilidad */
   background-color: #f3f5fc;
+  color: #0a3871; /* Define un color de texto para asegurar visibilidad */
 }
 
 .texto::placeholder {
@@ -31,15 +35,12 @@
 
 .texto:focus,
 .texto:active {
-  border: none;
-  outline: none;
+  outline: none; /* `outline` ya cubre `border`, por lo que no es necesario poner ambos */
 }
 
 .terminos {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  padding: 0px;
   gap: 8px;
   position: absolute;
   width: 80%;
@@ -48,61 +49,50 @@
 }
 
 .terminos p {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  line-height: 150%;
+  line-height: 1.5; /* Usar valor numérico */
   color: #495057;
   opacity: 0.8;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
 
 .botones {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
   padding: 1% 0;
   position: absolute;
   width: 80%;
   left: 12%;
   top: 82%;
+  gap: 2%; /* Añadido para espacio entre botones */
 }
 
-.btn-encriptar {
+button {
+  cursor: pointer;
+}
+
+.btn-encriptar,
+.btn-desencriptar {
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 2%;
   gap: 8px;
   width: 25%;
-  background-color: #0a3871;
-  border-radius: 24px;
-  font-family: "Inter";
   font-size: 18px;
-  line-height: 19px;
+  line-height: 1.1; /* Usar valor numérico */
   text-align: center;
+  border-radius: 24px;
+}
+
+.btn-encriptar {
+  background-color: #0a3871;
   color: #fff;
 }
 
 .btn-desencriptar {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 2%;
-  gap: 8px;
-  width: 25%;
   background: #d8dfe8;
   border: 1px solid #0a3871;
-  border-radius: 24px;
-  font-family: "Inter";
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 19px;
-  text-align: center;
   color: #0a3871;
 }
 
@@ -116,6 +106,7 @@
 .encriptado {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: absolute;
   width: 30%;
   height: 90%;
@@ -141,23 +132,17 @@
 
 .mensaje-encriptado h2 {
   width: 60%;
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 700;
   font-size: 24px;
-  line-height: 120%;
-  text-align: center;
+  line-height: 1.2; /* Usar valor numérico */
   color: #343a40;
 }
 
 .mensaje-encriptado p {
   width: 80%;
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
-  text-align: center;
+  line-height: 1.5; /* Usar valor numérico */
   color: #495057;
 }
 
@@ -172,10 +157,7 @@
 @media (max-width: 57.5em) {
   .container {
     display: flex;
-    flex-direction: row;
-  }
-  .encriptar {
-    width: 100%;
+    flex-direction: column; /* Cambiado a column para una mejor disposición en dispositivos más pequeños */
   }
   .texto {
     width: 80%;
@@ -203,22 +185,21 @@
   }
   .btn-encriptar:hover,
   .btn-desencriptar:hover {
-    margin: 0.3%;
     width: 47.5%;
     padding: 1.8%;
   }
   .encriptado {
     width: 80%;
-    height: 15%;
+    height: auto; /* Cambiado a auto para manejar mejor el contenido dinámico */
     left: 10%;
-    top: 80%;
+    top: auto;
+    bottom: 5%; /* Mejorado para mantener un margen en la parte inferior */
   }
   .mensaje-encriptado {
     width: 100%;
     top: 5%;
   }
   .encriptado img {
-    top: 0;
     display: none;
     visibility: hidden;
   }
